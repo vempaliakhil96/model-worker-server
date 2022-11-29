@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nTerminateProtected\n\n TerminateProtected ()\n\nInitialize self. See help(type(self)) for accurate signature.\n\nsource\n\n\nGunicornLogger\n\n GunicornLogger (cfg)\n\nInitialize self. See help(type(self)) for accurate signature.\n\nworker_cmd = ['gunicorn', '-b', '0.0.0.0:5009', '-w', '5', 'worker:app', '-n', 'worker', '--access-logfile', '-']\nmodel_cmd = ['gunicorn', '-b', '0.0.0.0:5001', '-w', '1', 'model:app', '-n', 'model', '--access-logfile', '-']\nworker = subprocess.Popen(worker_cmd)\nmodel = subprocess.Popen(model_cmd)\ngraceful_killer = TerminateProtected()\nwhile not graceful_killer.kill_now:\n    time.sleep(1)\n    if worker.poll() is None or model.poll() is None: continue\n    else:\n        worker.send_signal(15)\n        model.send_signal(15)"
+  }
+]
