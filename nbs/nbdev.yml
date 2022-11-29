@@ -2,8 +2,8 @@ project:
   output-dir: _docs
 
 website:
-  title: "worker_model_server"
-  site-url: "https://vempaliakhil96.github.io/worker_model_server"
+  title: "model_worker_server"
+  site-url: "https://vempaliakhil96.github.io/model_worker_server"
   description: "A simple WSGI server for model-worker type applications"
   repo-branch: master
-  repo-url: "https://github.com/vempaliakhil96/worker_model_server"
+  repo-url: "https://github.com/vempaliakhil96/model_worker_server"
